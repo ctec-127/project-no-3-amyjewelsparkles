@@ -1,6 +1,8 @@
 <?php // Filename: search-records.php
 
 $pageTitle = "Search Records";
+
+// retreiving required files and php scripts for header, database connection, functions etc
 require 'inc/layout/header.inc.php';
 require 'inc/db/mysqli_connect.inc.php';
 require 'inc/functions/functions.inc.php';
@@ -12,11 +14,13 @@ require 'inc/app/config.inc.php';
         <div class="col-lg-12 mt-4">
         <?php 
             if ($_SERVER['REQUEST_METHOD'] == "POST") {
+                // checking the requested search 
                 if(!empty($_POST['search'])){
                     $sql = "SELECT * FROM $db_table WHERE " . '"' . $_POST["search"] . '"' . " IN (student_id, first_name, last_name, email, phone) ORDER BY last_name ASC";
                     // $sql = "SELECT * FROM student WHERE student_id LIKE '%val%' or field2 LIKE '%val%'
+                    //storing results as $result
                     $result = $db->query($sql);
-
+                    // displaying results
                     if ($result->num_rows == 0) {
                         echo "<p class=\"display-4 mt-4 text-center\">No results found for \"<strong>{$_POST['search']}</strong>\"</p>";
                         echo '<img class="mx-auto d-block mt-4" src="img/frown.png" alt="A sad face">';
@@ -35,5 +39,5 @@ require 'inc/app/config.inc.php';
         </div>
     </div>
 </div>
-
+<!-- getting footer content-->
 <?php require 'inc/layout/footer.inc.php';?>

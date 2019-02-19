@@ -1,5 +1,6 @@
 <?php // Filename: delete-record.php
 
+// getting mysql_connect file for connecting to database and config. 
 require __DIR__ . "/inc/db/mysqli_connect.inc.php";
 require __DIR__ . "/inc/app/config.inc.php";
 
