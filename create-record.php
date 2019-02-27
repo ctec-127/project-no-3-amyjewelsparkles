@@ -9,8 +9,8 @@ require 'inc/layout/header.inc.php';
 		<div class="col-lg-12">
 			<h1>Create a New Record</h1>
 			<!-- getting create content and form files-->
-			<?php require __DIR__ .'/inc/create/content.inc.php'; ?>
-			<?php require __DIR__ .'/inc/create/form.inc.php' ?>
+			<?php require_once __DIR__ .'/inc/create/content.inc.php'; ?>
+			<?php require_once __DIR__ .'/inc/create/form.inc.php' ?>
 		</div>
     </div>
 </div>
