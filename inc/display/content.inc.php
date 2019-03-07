@@ -2,7 +2,6 @@
 
 // getting database info and functions
 require __DIR__ . "/../db/mysqli_connect.inc.php";
-require __DIR__ . "/../functions/functions.inc.php";
 
 // setting variables
 $orderby = 'last_name'; //default set to 'last_name'

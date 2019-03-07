@@ -1,7 +1,7 @@
 <?php // Filename: config.inc.php
     
 // copyright
-$app_copyright = '&copy; 2019 - Your Name';
+$app_copyright = '&copy; 2019 - Amina Khan';
 // version
 $app_version = 0.1;
 // app name

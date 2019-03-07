@@ -27,7 +27,7 @@ http://php.net/manual/en/language.operators.comparison.php#language.operators.co
     <input class="form-control" type="text" id="last" name="last" value="<?php echo (isset($last) ? $last: '');?>">
     <br>
     <label class="col-form-label" for="id">Student ID </label>
-    <input class="form-control" type="text" id="id" name="id" value="<?php echo (isset($id) ? $id: '');?>">
+    <input class="form-control" type="text" id="sid" name="sid" value="<?php echo (isset($sid) ? $sid: '');?>">
     <br>
     <label class="col-form-label" for="email">Email </label>
     <input class="form-control" type="text" id="email" name="email" value="<?php echo (isset($email) ? $email: '');?>">
@@ -36,14 +36,14 @@ http://php.net/manual/en/language.operators.comparison.php#language.operators.co
     <input class="form-control" type="text" id="phone" name="phone" value="<?php echo (isset($phone) ? $phone: '');?>">
     <br>
     <label class="col-form-label" for="gpa">GPA</label>
-    <input class="form-control" type="number" min="0" max="5.0" step="0.01" id="gpa" name="gpa" value="<?php echo (isset($gpa) ? $gpa: '');?>">
+    <input class="form-control" type="number" min="0" max="5.0" step="0.01" id="gpa" name="gpa" value="<?php echo (isset($gpa) ? $gpa: '0');?>">
     
     
     <br>
     <label class="col-form-label" for="yes">Financial Aid: </label>
     
     <label class="radio-inline" for="yes"><input type="radio" name="financial_aid" id="yes" value="1" <?php if($check=="1") echo 'checked="checked"'; ?> > Yes </label>
-    <label class="radio-inline" for="no"><input type="radio" name="financial_aid" id="no" value="no" <?php if($check=="no") echo 'checked="checked"'; ?> > No </label>
+    <label class="radio-inline" for="no"><input type="radio" name="financial_aid" id="no" value="no" <?php if(($check=="no") OR ($check=='0')) echo 'checked="checked"'; ?> > No </label>
     
     <br>
     <div class="form-group">
@@ -61,4 +61,5 @@ http://php.net/manual/en/language.operators.comparison.php#language.operators.co
 
     <a href="display-records.php">Cancel</a>&nbsp;&nbsp;
     <button class="btn btn-primary" type="submit">Save Record</button>
+    <input type="hidden" name="id" value="<?php echo (isset($id) ? $id : '');?>">
 </form>

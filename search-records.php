@@ -5,7 +5,6 @@ $pageTitle = "Search Records";
 // retreiving required files and php scripts for header, database connection, functions etc
 require 'inc/layout/header.inc.php';
 require 'inc/db/mysqli_connect.inc.php';
-require 'inc/functions/functions.inc.php';
 require 'inc/app/config.inc.php';
 ?>
 
