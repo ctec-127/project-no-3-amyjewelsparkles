@@ -3,9 +3,9 @@
 $pageTitle = "Search Records";
 
 // retreiving required files and php scripts for header, database connection, functions etc
-require 'inc/layout/header.inc.php';
-require 'inc/db/mysqli_connect.inc.php';
-require 'inc/app/config.inc.php';
+require_once 'inc/layout/header.inc.php';
+require_once 'inc/db/mysqli_connect.inc.php';
+require_once 'inc/app/config.inc.php';
 ?>
 
 <div class="container">
@@ -39,4 +39,4 @@ require 'inc/app/config.inc.php';
     </div>
 </div>
 <!-- getting footer content-->
-<?php require 'inc/layout/footer.inc.php';?>
+<?php require_once 'inc/layout/footer.inc.php';?>

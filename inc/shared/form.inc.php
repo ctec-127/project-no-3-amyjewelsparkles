@@ -35,17 +35,7 @@ http://php.net/manual/en/language.operators.comparison.php#language.operators.co
     <label class="col-form-label" for="phone">Phone </label>
     <input class="form-control" type="text" id="phone" name="phone" value="<?php echo (isset($phone) ? $phone: '');?>">
     <br>
-    <label class="col-form-label" for="gpa">GPA</label>
-    <input class="form-control" type="number" min="0" max="5.0" step="0.01" id="gpa" name="gpa" value="<?php echo (isset($gpa) ? $gpa: '0');?>">
-    
-    
-    <br>
-    <label class="col-form-label" for="yes">Financial Aid: </label>
-    
-    <label class="radio-inline" for="yes"><input type="radio" name="financial_aid" id="yes" value="1" <?php if($check=="1") echo 'checked="checked"'; ?> > Yes </label>
-    <label class="radio-inline" for="no"><input type="radio" name="financial_aid" id="no" value="no" <?php if(($check=="no") OR ($check=='0')) echo 'checked="checked"'; ?> > No </label>
-    
-    <br>
+
     <div class="form-group">
         <label for="degree_program">Degree Program</label>
         <select class="form-control" id="degree_program" name="degree_program">
@@ -56,9 +46,23 @@ http://php.net/manual/en/language.operators.comparison.php#language.operators.co
             <option value="AST-2" <?php if($degree == "AST-2") echo 'selected="selected"'?> >AST-2</option>
         </select>
     </div>
-        <br>
-    <br>
 
+    <label class="col-form-label" for="grad_date">Graduation Date </label>
+    <input class="form-control" type="date" id="grad_date" name="grad_date" value="<?php echo (isset($grad_date) ? $grad_date: '');?>">
+    <br>
+    <label class="col-form-label" for="gpa">GPA</label>
+    <input class="form-control" type="number" min="0" max="5.0" step="0.01" id="gpa" name="gpa" value="<?php echo (isset($gpa) ? $gpa: '0');?>">
+    <br> 
+    <label class="col-form-label" for="yes">Financial Aid </label><br>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="financial_aid" id="yes" value="1" <?php if($check=="1") echo 'checked="checked"'; ?>>
+        <label class="form-check-label" for="yes">Yes</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="financial_aid" id="no" value="no" <?php if(($check=="no") OR ($check=='0')) echo 'checked="checked"'; ?>>
+        <label class="form-check-label" for="no">No</label>
+    </div>
+    <br><br>
     <a href="display-records.php">Cancel</a>&nbsp;&nbsp;
     <button class="btn btn-primary" type="submit">Save Record</button>
     <input type="hidden" name="id" value="<?php echo (isset($id) ? $id : '');?>">

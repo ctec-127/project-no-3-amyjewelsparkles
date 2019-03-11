@@ -38,7 +38,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
     } else {
         $phone = $db->real_escape_string(strip_tags($_POST['phone']));
     }
-    if (empty($_POST['gpa'])) {
+    if (!isset($_POST['gpa'])) {
         array_push($error_bucket,"<p>GPA is required.</p>");
     }else {
         #$gpa = $_POST['gpa'];
@@ -58,6 +58,11 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
         #$degree_program = $_POST['degree_program'];
         $degree_program = $db->real_escape_string($_POST['degree_program']);
     }
+    if(empty($_POST['grad_date'])){
+        array_push($error_bucket,"<p>Gradutaion Date is required.</p>");
+    } else{
+        $grad_date = $db->real_escape_string($_POST['grad_date']);
+    }
 
     // If we have no errors than we can try and insert the data
     if (count($error_bucket) == 0) {
@@ -76,15 +81,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
             echo '<div class="alert alert-success" role="alert">
             The record with Student ID: '. $sid . ' has been updated! <a href="display-records.php">Back to Record Manager</a>
           </div>';
-            unset($first);
-            unset($last);
-            unset($sid);
-            unset($email);
-            unset($phone);
-            unset($gpa);
-            unset($financial_aid);
-            unset($degree_program);
-            unset($id);
+            
         }
     } else {
         display_error_bucket($error_bucket);

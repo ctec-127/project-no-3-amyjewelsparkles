@@ -1,7 +1,7 @@
 <?php // Filename: connect.inc.php
 
 // getting database info and functions
-require __DIR__ . "/../db/mysqli_connect.inc.php";
+require_once __DIR__ . "/../db/mysqli_connect.inc.php";
 
 // setting variables
 $orderby = 'last_name'; //default set to 'last_name'

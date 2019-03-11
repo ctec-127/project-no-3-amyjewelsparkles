@@ -3,7 +3,7 @@
 // copyright
 $app_copyright = '&copy; 2019 - Amina Khan';
 // version
-$app_version = 0.1;
+$app_version = 0.9;
 // app name
 $app_name = "Record Manager";
 // database table name
