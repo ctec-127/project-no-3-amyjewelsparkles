@@ -64,6 +64,7 @@ http://php.net/manual/en/language.operators.comparison.php#language.operators.co
     </div>
     <br><br>
     <a href="display-records.php">Cancel</a>&nbsp;&nbsp;
+    <button class="btn btn-outline-dark my-2 my-sm-0" type="reset">Reset</button>
     <button class="btn btn-primary" type="submit">Save Record</button>
     <input type="hidden" name="id" value="<?php echo (isset($id) ? $id : '');?>">
 </form>

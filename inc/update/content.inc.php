@@ -70,7 +70,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
         if($_POST['financial_aid'] == 'no'){
             $financial_aid = $db->real_escape_string('0');
         }
-        $sql = "UPDATE $db_table SET first_name='$first', last_name='$last', student_id=$sid, email='$email', phone='$phone', gpa='$gpa', financial_aid='$financial_aid', degree_program='$degree_program' WHERE id=$id";
+        $sql = "UPDATE $db_table SET first_name='$first', last_name='$last', student_id=$sid, email='$email', phone='$phone', gpa='$gpa', financial_aid='$financial_aid', degree_program='$degree_program', grad_date='$grad_date' WHERE id=$id";
 
         $result = $db->query($sql);
         if (!$result) {
@@ -101,8 +101,10 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
         $sid = $row['student_id'];
         $email = $row['email'];
         $phone = $row['phone'];
+        $degree_program = $row['degree_program'];
+        $grad_date = $row['grad_date'];
         $gpa = $row['gpa'];
         $financial_aid = $row['financial_aid'];
-        $degree_program = $row['degree_program'];
+        
     }
 }
